@@ -1,16 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { pokeTypesFetch } from '../apiCalls';
+import { pokeIdFetch } from '../apiCalls';
 
 
 
 class Card extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      active: false
+    }
+  }
+
+handleCardClick = (e) => {
+  this.setState({ active: !this.state.active })
+  if(this.state.active){
+    pokeIdFetch(this.props.pokeTypes)
+  }
+  
+}
 
   render() {
-    console.log(this.props.pokeTypes)
     const { id, name, pokemon} = this.props
 
     return(
-      <div>
+      <div onClick={this.handleCardClick}>
         <h1>{name}</h1>
       </div>
     )
