@@ -8,10 +8,13 @@ import { pokeTypesAction } from '../../actions/index';
 
 class App extends Component {
 
-  componentDidMount(){
+  async componentDidMount(){
     const url = 'http://localhost:3001/types';
-    const pokeTypes = pokeTypesFetch( url )
+    const pokeTypes = await pokeTypesFetch( url )
+    const resolvedTypes = Promise.resolve(pokeTypes)
     this.props.sendPokeType( pokeTypes )
+  console.log(resolvedTypes);
+  
   }
 
   render() {
