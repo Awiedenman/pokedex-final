@@ -17,7 +17,7 @@ class FakeContainer extends Component {
 }
 
 FakeContainer.propTypes = {
-  fake: shape({ fake: string }),
+  // fake: shape({ fake: string }),
   fakeAction: func.isRequired
 };
 
