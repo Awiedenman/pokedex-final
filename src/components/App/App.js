@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import FakeContainer from '../../containers/FakeContainer/'
+import { pokeTypesFetch } from '../../apiCalls';
 
 class App extends Component {
+
+  componentDidMount(){
+    const url = 'http://localhost:3001/types';
+    const pokeTypes = pokeTypesFetch(url)
+  }
 
   render() {
     return (
