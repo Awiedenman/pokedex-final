@@ -3,6 +3,7 @@ import { connect } from'react-redux';
 import './App.css';
 import FakeContainer from '../../containers/FakeContainer/'
 import { pokeTypesFetch } from '../../apiCalls';
+import { pokeTypesAction } from '../../actions/index';
 
 
 class App extends Component {
@@ -23,8 +24,8 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => ({
 sendPokeType: ( pokeTypes ) => dispatch(pokeTypesAction( pokeTypes ))
-}
+})
 
 export default connect(null, mapDispatchToProps)(App);

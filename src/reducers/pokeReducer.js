@@ -1,4 +1,4 @@
-const pokeReducer = (state=[], action) => {
+export const pokeReducer = (state=[], action) => {
   switch (action.type) {
     case 'POKE_TYPE_ACTION':
     return action.payload
@@ -7,4 +7,4 @@ const pokeReducer = (state=[], action) => {
   }
 };
 
-export default fakeReducer
+

@@ -1,4 +1,6 @@
-export const pokeTypesAction = ( pokeTypes ) => ({ 
+export const fakeAction = () => ({ type: 'FAKE'})
+
+export const pokeTypesAction = (pokeTypes) => ({
   type: 'POKE_TYPE_ACTION',
-  payload: poketTypes
+  payload: pokeTypes
 })
