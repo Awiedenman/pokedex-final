@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 // import Redux from 'redux';
 import { connect } from 'react-redux';
-// import { Card } from './Card';
+import Card from './Card';
 
 
 
-export const CardContainer = ({pokeTypes}) => {
-  console.log(pokeTypes)
-  // const createCards = pokeTypes.map( type =>{
-  // })
-  return(
-    <div>
-      {/* {createCards}*/}
-    </div>
-  )
-}
+class CardContainer extends Component {
+  typeCards = () => {
+    console.log(this.props.pokeTypes); 
+    return this.props.pokeTypes.map( type => {
+      return <Card {...type} key = {type.id} />
+    })
+  }
+  
+
+  render(){
+    return(
+      <div>
+        {this.typeCards()}
+      </div>
+    )
+  }
+} 
+  
 
 const mapStateToProps = (state) =>({
   pokeTypes: state.pokeTypes
